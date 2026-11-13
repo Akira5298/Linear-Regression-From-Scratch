@@ -75,6 +75,20 @@ For individual experiments, select one of the five datasets. The program display
 
 Each dataset contains training and test inputs and outputs.
 
+## Sample Results
+
+Training and test predictions for all five datasets are displayed side by side. Each graph compares actual outputs with the model's predictions.
+
+| Dataset | Training Predictions | Test Predictions |
+|---|---|---|
+| **Linear Regression** (`linear.npz`) | ![Linear training predictions](src/plots/linear_training.png) | ![Linear test predictions](src/plots/linear_test.png) |
+| **Affine Regression** (`affine1.npz`) | ![Affine1 training predictions](src/plots/affine1_training.png) | ![Affine1 test predictions](src/plots/affine1_test.png) |
+| **Weight Perturbation** (`affine2.npz`) | ![Affine2 training predictions](src/plots/affine2_training.png) | ![Affine2 test predictions](src/plots/affine2_test.png) |
+| **Rank-Deficient Regression** (`rank.npz`) | ![Rank training predictions](src/plots/rank_training.png) | ![Rank test predictions](src/plots/rank_test.png) |
+| **Near-Zero Feature Weights** (`zero.npz`) | ![Zero training predictions](src/plots/zero_training.png) | ![Zero test predictions](src/plots/zero_test.png) |
+
+*Note: The plots show predictions made using the fitted model. Perturbed-weight results and rank-deficiency diagnostics are reported in the terminal, not directly depicted by these plots.*
+
 ## Technologies
 
 Python · NumPy · Matplotlib
