@@ -1,21 +1,26 @@
 # Linear Regression from Scratch
 
-A Python project exploring linear regression using NumPy matrix operations, with experiments on five datasets and visualizations using Matplotlib.
+A Python project implementing linear regression using NumPy, with experiments on five datasets and visualizations using Matplotlib.
+
+The project includes an interactive terminal analyzer for selecting datasets, evaluating model performance, and visualizing training and test predictions.
 
 ## Features
 
-- Train linear regression models with or without a bias term.
-- Evaluate predictions using training and test Mean Squared Error (MSE).
-- Compare original and slightly perturbed model weights.
-- Handle rank-deficient data using the pseudoinverse and compare it with NumPy's least-squares solver.
-- Plot actual versus predicted outputs for the `zero.npz` dataset.
+- Implement linear regression using the Normal Equation, with or without a bias term.
+- Evaluate model performance using training and test Mean Squared Error (MSE).
+- Select individual datasets or run all experiments through an interactive terminal menu.
+- Generate separate training and test graphs comparing actual and predicted outputs, with optional PNG exports.
+- Analyze the effects of weight perturbations on model accuracy.
+- Handle rank-deficient datasets using the pseudoinverse and NumPy's least-squares solver.
+- Examine near-zero weights to identify potentially irrelevant features.
 
 ## Project Structure
 
 ```text
 linear-regression-from-scratch/
 ├── src/
-│   └── linear_regression.py
+│   ├── linear_regression.py
+│   └── plots/                # Saved graphs (generated automatically)
 ├── data/
 │   ├── linear.npz
 │   ├── affine1.npz
@@ -29,20 +34,51 @@ linear-regression-from-scratch/
 
 ## Getting Started
 
-Install the dependencies from the repository's root folder:
+**1. Install dependencies**
+
+From the repository's root folder:
 
 ```bash
 python3 -m pip install -r requirements.txt
 ```
 
-Run all experiments:
+**2. Run the analyzer**
 
 ```bash
 python3 src/linear_regression.py
 ```
 
-The script prints the training and test MSE for each dataset and displays a plot for `zero.npz`.
+**3. Select an output option**
+
+```text
+=== Choose Output Type ===
+1. Show training output only
+2. Show test output only
+3. Show both training and test outputs
+4. Run all datasets (training only)
+5. Run all datasets (test only)
+6. Run all datasets (both training and test)
+0. Exit
+```
+
+For individual experiments, select one of the five datasets. The program displays model weights, training and test MSE, and the selected graphs. Graphs can optionally be saved to `src/plots/`.
+
+## Datasets
+
+| Dataset | Description |
+|---|---|
+| `linear.npz` | Linear regression without a bias term |
+| `affine1.npz` | Linear regression with a bias term |
+| `affine2.npz` | Analysis of weight perturbations |
+| `rank.npz` | Rank-deficient data and pseudoinverse solutions |
+| `zero.npz` | Analysis of near-zero feature weights |
+
+Each dataset contains training and test inputs and outputs.
 
 ## Technologies
 
 Python · NumPy · Matplotlib
+
+## Learning Objectives
+
+Explore linear regression, matrix operations, model evaluation, numerical stability, and the effects of model parameters through practical experiments.
